@@ -1,0 +1,64 @@
+﻿<Window x:Class="InventoryManagement.SemiMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InventoryManagement"
+        mc:Ignorable="d"
+        Title="SemiMain" Height="570" Width="1207">
+    <Grid Margin="0,0,-44,-6" Background="black">
+        <ListView x:Name="listprod" HorizontalAlignment="Left" Height="241" Margin="10,60,0,0" VerticalAlignment="Top" Width="506" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="listprod_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID" DisplayMemberBinding="{Binding Product_ID}"/>
+                    <GridViewColumn Header="Prod.Name" DisplayMemberBinding="{Binding Product_Name}"/>
+                    <GridViewColumn Header="Prod.Details" DisplayMemberBinding="{Binding Product_Details}"/>
+                    <GridViewColumn Header="Prod.Cost" DisplayMemberBinding="{Binding Product_Cost}"/>
+                    <GridViewColumn Header="Prod.SellPrice" DisplayMemberBinding="{Binding Product_SellingPrice}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btn_transacAdd" Content="ADD" HorizontalAlignment="Left" Margin="1074,307,0,0" VerticalAlignment="Top" Height="20" Width="74" Click="btn_transacAdd_Click"/>
+        <Button x:Name="updateTransac" Content="UPDATE" HorizontalAlignment="Left" Margin="1004,307,0,0" VerticalAlignment="Top" Width="66" Height="20" Click="btn_UpdateTransaction"/>
+        <TextBox x:Name="txtSearch" HorizontalAlignment="Left" Margin="13,37,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtSearch2" HorizontalAlignment="Left" Margin="550,35,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="txtSearch2_TextChanged"/>
+        <Button Content="SEARCH" HorizontalAlignment="Left" Margin="138,35,0,0" VerticalAlignment="Top" Width="84" Click="Button_Click"/>
+        <Button Content="SEARCH" HorizontalAlignment="Left" Margin="676,33,0,0" VerticalAlignment="Top" Width="72" Click="Button_Click_1"/>
+        <Button x:Name="btn_UpdateProduct" Content="UPDATE" HorizontalAlignment="Left" Height="23" Margin="388,311,0,0" VerticalAlignment="Top" Width="60" Click="btn_UpdateProduct_Click"/>
+        <Button x:Name="btn_productAdd" Content="ADD" HorizontalAlignment="Left" Margin="453,311,0,0" VerticalAlignment="Top" Height="23" Width="63" Click="Button_Click_2"/>
+        <ListView x:Name="listtransaction" HorizontalAlignment="Left" Height="244" Margin="548,58,0,0" VerticalAlignment="Top" Width="598" d:ItemsSource="{d:SampleData ItemCount=5}" SelectionChanged="listtransaction_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Transac.ID" DisplayMemberBinding="{Binding Transaction_ID}"/>
+                    <GridViewColumn Header="Prod.ID" DisplayMemberBinding="{Binding Product_ID}"/>
+                    <GridViewColumn Header="Prod.Quantity" DisplayMemberBinding="{Binding Product_Quantity}"/>
+                    <GridViewColumn Header="User.ID" DisplayMemberBinding="{Binding User_ID}"/>
+                    <GridViewColumn Header="Product.SellPrice" DisplayMemberBinding="{Binding Product_SellingPrice}"/>
+                    <GridViewColumn Header="Date and Time" DisplayMemberBinding="{Binding DateTime}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="tbx_ID" HorizontalAlignment="Left" Margin="102,306,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="33"/>
+        <TextBox x:Name="tbx_Name" HorizontalAlignment="Left" Margin="102,344,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="34"/>
+        <TextBox x:Name="tbx_Details" HorizontalAlignment="Left" Margin="102,383,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="33"/>
+        <TextBox x:Name="tbx_Cost" HorizontalAlignment="Left" Margin="102,421,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="33"/>
+        <TextBox x:Name="tbx_Price" HorizontalAlignment="Left" Margin="102,459,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="33"/>
+        <Label Content="Prod.ID:" HorizontalAlignment="Left" Margin="48,310,0,0" VerticalAlignment="Top" Foreground="#FFD7C2C2"/>
+        <Label Content="Prod.Name:" HorizontalAlignment="Left" Margin="33,348,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prod.Details:" HorizontalAlignment="Left" Margin="24,387,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prod.Cost:" HorizontalAlignment="Left" Margin="35,425,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prod.SellPrice:" HorizontalAlignment="Left" Margin="15,463,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbx_TransID" HorizontalAlignment="Left" Margin="712,317,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="33"/>
+        <TextBox x:Name="tbx_TransProdID" HorizontalAlignment="Left" Margin="712,357,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="34"/>
+        <TextBox x:Name="tbx_TransQuantity" HorizontalAlignment="Left" Margin="712,396,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="33"/>
+        <TextBox x:Name="tbx_TransUser" HorizontalAlignment="Left" Margin="712,434,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="33"/>
+        <TextBox x:Name="tbx_TransSellPrice" HorizontalAlignment="Left" Margin="712,472,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Height="33"/>
+        <Label Content="Transac.ID:" HorizontalAlignment="Left" Margin="644,321,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prod.ID:" HorizontalAlignment="Left" Margin="660,361,0,0" VerticalAlignment="Top"/>
+        <Label Content="Prod.Quantity:" HorizontalAlignment="Left" Margin="620,400,0,0" VerticalAlignment="Top"/>
+        <Label Content="User.ID:" HorizontalAlignment="Left" Margin="646,438,0,0" VerticalAlignment="Top" Width="66"/>
+        <Label Content="Prod.SellPrice:" HorizontalAlignment="Left" Margin="626,476,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btn_clear1" Content="CLEAR" HorizontalAlignment="Left" Margin="453,351,0,0" VerticalAlignment="Top" Width="63" Click="Button_Click_3"/>
+        <Button x:Name="btn_clear2" Content="CLEAR" HorizontalAlignment="Left" Margin="1074,341,0,0" VerticalAlignment="Top" Width="72" Click="Button_Click_4"/>
+    </Grid>
+</Window>

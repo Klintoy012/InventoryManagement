@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Dbz">
+  <DataContextMoniker Name="/DbzDataContext" />
+  <nestedChildShapes>
+    <classShape Id="98af2404-fbb3-4273-bd10-4bc5e778ed0b" absoluteBounds="1.375, 0.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DbzDataContext/Table_Product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="00b953c4-97e5-4de2-823a-54baf80521f2" absoluteBounds="1.3899999999999997, 0.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fae4e306-33a7-4d03-b4de-97fa249d6430" absoluteBounds="6, 1.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DbzDataContext/Table_User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a610d041-153e-4ab8-b31b-82d9326e9129" absoluteBounds="6.015, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="212d76bf-c813-4074-9a87-582e8f4c3d90" absoluteBounds="2.25, 3.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DbzDataContext/Table_Transactions" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6cbe260c-c397-4ae6-a87c-fb4602fcdd65" absoluteBounds="2.2649999999999997, 3.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.8125 : 2.27089680989583); (2.8125 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DbzDataContext/Table_Product/Table_Product_Table_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="98af2404-fbb3-4273-bd10-4bc5e778ed0b" />
+        <classShapeMoniker Id="212d76bf-c813-4074-9a87-582e8f4c3d90" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(6 : 2.73484537760417); (3.84375 : 2.73484537760417); (3.84375 : 3.5)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DbzDataContext/Table_User/Table_User_Table_Transaction" />
+      <nodes>
+        <classShapeMoniker Id="fae4e306-33a7-4d03-b4de-97fa249d6430" />
+        <classShapeMoniker Id="212d76bf-c813-4074-9a87-582e8f4c3d90" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

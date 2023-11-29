@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database_Inventory" Class="DbzDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-9V6J4C3E\SQLEXPRESS;Initial Catalog=Database_Inventory;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False" SettingsObjectName="InventoryManagement.Properties.Settings" SettingsPropertyName="Database_InventoryConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Table_Product" Member="Table_Products">
+    <Type Name="Table_Product">
+      <Column Name="Product_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Product_Name" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Product_Details" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Product_Cost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Product_SellingPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="Table_Product_Table_Transaction" Member="Table_Transactions" ThisKey="Product_ID" OtherKey="Product_ID" Type="Table_Transactions" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Table_User" Member="Table_Users">
+    <Type Name="Table_User">
+      <Column Name="User_ID" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Role" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Association Name="Table_User_Table_Transaction" Member="Table_Transactions" ThisKey="User_ID" OtherKey="User_ID" Type="Table_Transactions" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Table_Transactions" Member="Table_Transactions">
+    <Type Name="Table_Transactions">
+      <Column Name="Transaction_ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Product_ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Product_Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="User_ID" Type="System.String" DbType="NVarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Product_SellingPrice" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Table_Product_Table_Transaction" Member="Table_Product" ThisKey="Product_ID" OtherKey="Product_ID" Type="Table_Product" IsForeignKey="true" />
+      <Association Name="Table_User_Table_Transaction" Member="Table_User" ThisKey="User_ID" OtherKey="User_ID" Type="Table_User" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
